@@ -4,9 +4,7 @@
     "exclude": ["src/tests", "node_modules"],
     "includePattern": ".+\\.js(x)?$"
   },
-  "plugins": [
-    "plugins/markdown"
-  ],
+  "plugins": ["plugins/markdown"],
   "templates": {
     "cleverLinks": true,
     "monospaceLinks": true

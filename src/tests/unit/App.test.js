@@ -1,18 +1,19 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../../components/HelloWorld';
 
+// Ignore les imports de styles
+jest.mock('../../styles/main.scss', () => ({}));
+
 describe('App Component', () => {
   test('should render Hello World text', () => {
     render(<App />);
-    const headingElement = screen.getByText(/Hello World!/i);
-    expect(headingElement).toBeInTheDocument();
+    expect(screen.getByText('Hello World!')).toBeInTheDocument();
   });
 
   test('should render environment information', () => {
     render(<App />);
-    const environmentElement = screen.getByText(/Current environment/i);
-    expect(environmentElement).toBeInTheDocument();
+    expect(screen.getByText(/Current environment:/)).toBeInTheDocument();
+    expect(screen.getByText(/API URL:/)).toBeInTheDocument();
   });
 });

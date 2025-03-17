@@ -7,5 +7,8 @@ module.exports = {
         },
       }],
       '@babel/preset-react',
-    ],
+    ],  plugins: [
+      // Ajoutez ces plugins si nécessaire
+      '@babel/plugin-transform-runtime'
+    ]
   };

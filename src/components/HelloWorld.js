@@ -1,28 +1,36 @@
-/* eslint-disable no-undef */
 import React from 'react';
+import '../styles/main.scss';
 
 /**
  * Composant principal de l'application
  * 
- * Affiche un message "Hello World" et récupère les informations d'environnement
+ * Ce composant affiche des informations de base sur l'environnement 
+ * de l'application et la configuration de l'API.
  * 
  * @component
- * @returns {React.ReactElement} Élément React principal de l'application
+ * @example
+ * return (
+ *   <App />
+ * )
+ * 
+ * @returns {React.ReactElement} Élément React représentant le composant App
  */
 function App() {
   /**
-   * Récupère l'environnement courant
-   * Utilise NODE_ENV ou définit par défaut 'development'
+   * Récupère l'environnement courant de l'application
+   * Par défaut, utilise 'development' si aucun environnement n'est spécifié
    * 
    * @type {string}
+   * @default 'development'
    */
   const nodeEnv = process.env.NODE_ENV || 'development';
 
   /**
    * Récupère l'URL de l'API
-   * Utilise API_URL ou définit une URL locale par défaut
+   * Utilise une URL locale par défaut si aucune URL n'est configurée
    * 
    * @type {string}
+   * @default 'http://localhost:8080/api'
    */
   const apiUrl = process.env.API_URL || 'http://localhost:8080/api';
 

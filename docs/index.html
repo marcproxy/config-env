@@ -43,131 +43,183 @@
 
 
     <section>
-        <article><h1>config-env</h1>
-<p>Configuration d'un environnement de développement</p>
-<h1>Environnement de Développement Node.js</h1>
-<p>Ce projet contient un environnement de développement Node.js complet et professionnel avec React, Webpack, Babel, ESLint, SASS, Jest, JSDoc et une convention de commits.</p>
-<h2>Prérequis</h2>
+        <article><pre class="prettyprint source lang-markdown"><code># 🚀 Configuration d'Environnement de Développement React
+</code></pre>
+<p><a href="https://github.com/marcproxy/config-env"><img src="https://img.shields.io/github/stars/marcproxy/config-env.svg?style=social&amp;label=Star" alt="GitHub stars"></a>
+<a href="https://opensource.org/licenses/ISC"><img src="https://img.shields.io/badge/License-ISC-blue.svg" alt="License"></a>
+<a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-16+-green.svg" alt="Node.js Version"></a>
+<a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-19-blueviolet.svg" alt="React Version"></a>
+<a href="https://github.com/marcproxy/config-env/issues"><img src="https://img.shields.io/badge/Contributions-welcome-orange.svg" alt="Contributions welcome"></a></p>
+<h2>📋 Présentation du Projet</h2>
+<p>Un modèle complet de configuration d'environnement de développement pour applications React, intégrant les meilleures pratiques de développement moderne.</p>
+<h3>🌟 Fonctionnalités Clés</h3>
 <ul>
-<li>Node.js (&gt;= 14.x)</li>
-<li>npm (&gt;= 6.x)</li>
+<li>🔧 Configuration Webpack complète</li>
+<li>🧪 Tests unitaires avec Jest</li>
+<li>🔍 Linting avec ESLint</li>
+<li>📝 Génération de documentation avec JSDoc</li>
+<li>💡 Gestion multi-environnements</li>
+<li>🚢 Workflow de commits conventionnels</li>
 </ul>
-<h2>Installation</h2>
-<ol>
-<li>Clonez ce dépôt :</li>
-</ol>
-<pre class="prettyprint source lang-bash"><code>git clone &lt;url-du-depot>
-cd &lt;nom-du-repertoire>
+<h2>🛠 Technologies Utilisées</h2>
+<p><img src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat&amp;logo=webpack&amp;logoColor=white" alt="Webpack">
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat&amp;logo=react&amp;logoColor=black" alt="React">
+<img src="https://img.shields.io/badge/Jest-C21325?style=flat&amp;logo=jest&amp;logoColor=white" alt="Jest">
+<img src="https://img.shields.io/badge/ESLint-4B32C3?style=flat&amp;logo=eslint&amp;logoColor=white" alt="ESLint">
+<img src="https://img.shields.io/badge/Prettier-F7B93E?style=flat&amp;logo=prettier&amp;logoColor=black" alt="Prettier"></p>
+<h2>🚀 Démarrage Rapide</h2>
+<h3>Prérequis</h3>
+<ul>
+<li>Node.js 16+</li>
+<li>npm 8+</li>
+<li>Git</li>
+</ul>
+<h3>Installation</h3>
+<pre class="prettyprint source lang-bash"><code># Cloner le repository
+git clone https://github.com/marcproxy/config-env.git
+
+# Accéder au répertoire
+cd config-env
+
+# Installer les dépendances
+npm install
 </code></pre>
-<ol start="2">
-<li>Installez les dépendances :</li>
-</ol>
-<pre class="prettyprint source lang-bash"><code>npm install
-</code></pre>
-<h2>Structure du projet</h2>
-<pre class="prettyprint source"><code>.
-├── .husky/                # Hooks Git pour Husky
-├── public/                # Fichiers statiques
-├── src/                   # Code source
-│   ├── components/        # Composants React
-│   ├── styles/            # Fichiers SASS
-│   ├── tests/             # Tests unitaires
-│   │   └── unit/          # Tests unitaires spécifiques
-│   └── utils/             # Fonctions utilitaires
-├── .eslintrc.js           # Configuration ESLint
-├── .eslintignore          # Fichiers ignorés par ESLint
-├── babel.config.js        # Configuration Babel
-├── commitlint.config.js   # Configuration Commitlint
-├── jest.config.js         # Configuration Jest
-├── jsdoc.config.json      # Configuration JSDoc
-├── webpack.config.js      # Configuration Webpack
-└── package.json           # Dépendances et scripts npm
-</code></pre>
-<h2>Commandes disponibles</h2>
+<h2>📦 Scripts Principaux</h2>
 <h3>Développement</h3>
-<p>Pour lancer le serveur de développement avec hot reload :</p>
-<pre class="prettyprint source lang-bash"><code>npm run dev
-</code></pre>
-<h3>Production</h3>
-<p>Pour générer le bundle de production (avec tests préalables) :</p>
-<pre class="prettyprint source lang-bash"><code>npm run prod
-</code></pre>
-<h3>Tests</h3>
-<p>Pour exécuter les tests unitaires avec couverture :</p>
-<pre class="prettyprint source lang-bash"><code>npm test
-</code></pre>
-<h3>Linting</h3>
-<p>Pour vérifier et corriger automatiquement la syntaxe du code :</p>
-<pre class="prettyprint source lang-bash"><code>npm run lint
-</code></pre>
-<h3>Documentation</h3>
-<p>Pour générer la documentation automatique :</p>
-<pre class="prettyprint source lang-bash"><code>npm run doc
-</code></pre>
-<p>La documentation sera générée dans le dossier <code>docs/</code>.</p>
-<h3>Commits</h3>
-<p>Pour créer un commit qui respecte la convention :</p>
-<pre class="prettyprint source lang-bash"><code>npm run commit
-</code></pre>
-<h2>Conventions et standards</h2>
-<h3>Tests unitaires</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+<th>Environnement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm run dev</code></td>
+<td>Serveur de développement</td>
+<td>Développement</td>
+</tr>
+<tr>
+<td><code>npm run dev:staging</code></td>
+<td>Serveur de staging</td>
+<td>Staging</td>
+</tr>
+<tr>
+<td><code>npm run dev:testing</code></td>
+<td>Serveur de testing</td>
+<td>Testing</td>
+</tr>
+</tbody>
+</table>
+<h3>Construction</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+<th>Environnement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm run prod</code></td>
+<td>Build de production</td>
+<td>Production</td>
+</tr>
+<tr>
+<td><code>npm run build:staging</code></td>
+<td>Build de staging</td>
+<td>Staging</td>
+</tr>
+<tr>
+<td><code>npm run build:testing</code></td>
+<td>Build de testing</td>
+<td>Testing</td>
+</tr>
+</tbody>
+</table>
+<h3>Tests et Qualité</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>npm test</code></td>
+<td>Exécuter les tests</td>
+</tr>
+<tr>
+<td><code>npm run lint</code></td>
+<td>Vérifier le code</td>
+</tr>
+<tr>
+<td><code>npm run format</code></td>
+<td>Formater le code</td>
+</tr>
+</tbody>
+</table>
+<h2>🔧 Configuration Détaillée</h2>
+<h3>Variables d'Environnement</h3>
 <ul>
-<li>Tous les tests se trouvent dans le dossier <code>src/tests/</code></li>
-<li>Les tests unitaires doivent suivre la convention <code>*.test.js</code></li>
-<li>La couverture de code doit être affichée après chaque exécution des tests</li>
+<li>Fichier <code>.env.example</code> fourni comme modèle</li>
+<li>Création automatique du <code>.env</code></li>
+<li>Configuration multi-environnements</li>
 </ul>
-<h3>Documentation (JSDoc)</h3>
-<p>Chaque fonction ou composant doit être documenté selon les règles suivantes :</p>
+<h3>Environnements Supportés</h3>
 <ul>
-<li>Description de la fonction/composant</li>
-<li>Description de chaque paramètre avec son type</li>
-<li>Description de la valeur de retour avec son type</li>
-<li>Exemples d'utilisation si nécessaire</li>
+<li>Développement</li>
+<li>Staging</li>
+<li>Testing</li>
+<li>Production</li>
 </ul>
-<p>Exemple :</p>
-<pre class="prettyprint source lang-javascript"><code>/**
- * Additionne deux nombres
- * @param {number} a - Premier nombre
- * @param {number} b - Second nombre
- * @returns {number} La somme des deux nombres
- * @example
- * add(2, 3) // retourne 5
- */
+<h2>🤝 Contribution</h2>
+<ol>
+<li>Fork du projet</li>
+<li>Créer une branche de feature<pre class="prettyprint source lang-bash"><code>git checkout -b feature/ma-fonctionnalite
 </code></pre>
-<h3>Convention de commits</h3>
-<p>Ce projet suit la <a href="https://www.conventionalcommits.org/">Conventional Commits specification</a>. Utilisez <code>npm run commit</code> pour créer un commit qui respecte cette convention.</p>
-<p>Format des messages de commit :</p>
-<pre class="prettyprint source"><code>&lt;type>(&lt;scope>): &lt;description>
+</li>
+<li>Commiter les modifications<pre class="prettyprint source lang-bash"><code>npm run commit
+</code></pre>
+</li>
+<li>Pusher la branche<pre class="prettyprint source lang-bash"><code>git push origin feature/ma-fonctionnalite
+</code></pre>
+</li>
+<li>Ouvrir une Pull Request</li>
+</ol>
+<h3>Conventions</h3>
+<ul>
+<li>Commits conventionnels</li>
+<li>Respect des règles ESLint</li>
+<li>Documentation des nouvelles fonctionnalités</li>
+</ul>
+<h2>📦 Gestion des Dépendances</h2>
+<pre class="prettyprint source lang-bash"><code># Vérifier les mises à jour
+npm outdated
 
-[corps]
-
-[pied]
+# Mettre à jour
+npm update
 </code></pre>
-<p>Types courants :</p>
+<h2>📄 Licence</h2>
+<p>Distribué sous licence ISC.
+Voir <code>LICENSE</code> pour plus de détails.</p>
+<h2>🔗 Ressources</h2>
 <ul>
-<li><code>feat</code> : Nouvelle fonctionnalité</li>
-<li><code>fix</code> : Correction de bug</li>
-<li><code>docs</code> : Documentation</li>
-<li><code>style</code> : Changements qui n'affectent pas le sens du code</li>
-<li><code>refactor</code> : Changement de code qui ne corrige pas un bug et n'ajoute pas de fonctionnalité</li>
-<li><code>test</code> : Ajout ou correction de tests</li>
-<li><code>chore</code> : Changements dans le processus de build ou les outils</li>
+<li><a href="https://reactjs.org/">Documentation React</a></li>
+<li><a href="https://webpack.js.org/">Webpack Configuration</a></li>
+<li><a href="https://jestjs.io/">Jest Testing</a></li>
 </ul>
-<h3>Linting (ESLint)</h3>
-<p>Ce projet utilise la configuration ESLint d'Airbnb. Les règles sont définies dans <code>.eslintrc.js</code>.</p>
-<h2>Webpack et Babel</h2>
-<p>Webpack est configuré pour :</p>
-<ul>
-<li>Transpiler le code ES6+ avec Babel</li>
-<li>Gérer les fichiers SASS et CSS</li>
-<li>Optimiser les assets pour la production</li>
-<li>Fournir un serveur de développement avec hot reload</li>
-<li>Vérifier le code avec ESLint en temps réel</li>
-</ul>
-<h2>SASS</h2>
-<p>Les styles sont gérés avec SASS, qui permet d'utiliser des variables, des mixins et d'autres fonctionnalités avancées pour organiser vos styles.</p>
-<h2>React</h2>
-<p>Le projet est configuré pour utiliser React comme framework front-end.</p></article>
+<h2>📞 Contact</h2>
+<p>Marc Martin - [marc.martin@ensitech.eu]</p>
+<p>Lien du Projet : <a href="https://github.com/marcproxy/config-env">https://github.com/marcproxy/config-env</a></p>
+<hr>
+<h2>🌟 Donnez une étoile si ce projet vous aide !</h2>
+<h3>Contributeurs</h3>
+<p>Soyez le premier à contribuer ! 🎉</p>
+<p><a href="https://github.com/marcproxy/config-env/graphs/contributors">Afficher les contributeurs</a></p></article>
     </section>
 
 
@@ -184,7 +236,7 @@ cd &lt;nom-du-repertoire>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Mon Mar 17 2025 15:15:11 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Mon Mar 17 2025 15:54:41 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
