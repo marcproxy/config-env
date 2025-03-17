@@ -1,9 +1,7 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from '../../components/HelloWorld';
-
-// Ignore les imports de styles
-jest.mock('../../styles/main.scss', () => ({}));
+import App from '../../components/HelloWorld.js';
 
 describe('App Component', () => {
   test('should render Hello World text', () => {

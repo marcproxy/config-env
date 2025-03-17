@@ -3,41 +3,59 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    jest: true,  // Ajoute l'environnement Jest
+    jest: true
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:jest/recommended',
+    'plugin:jest/style'
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    'jest'
   ],
   rules: {
-    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
-    'react/react-in-jsx-scope': 'off', // Pour React 17+
-    'no-undef': 'warn', // Transforme les erreurs de variable non définie en avertissements
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    
+    // Nouvelles règles de base
+    'no-unused-vars': 'warn',
+    'no-console': 'warn',
+    'eqeqeq': 'error',
+    'prefer-const': 'error',
+    'max-len': ['warn', { code: 120 }],
+    'complexity': ['warn', { max: 10 }],
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off'
   },
   settings: {
     react: {
-      version: 'detect' // Détecte automatiquement la version de React
+      version: 'detect'
     }
   },
   globals: {
-    process: 'readonly',
-    describe: 'readonly',
-    test: 'readonly',
-    expect: 'readonly',
-    jest: 'readonly',
-    it: 'readonly',
-    beforeEach: 'readonly',
-    afterEach: 'readonly',
-    global: 'readonly'  // Ajoutez cette ligne
-  }
+    process: 'readonly'
+  },
+  overrides: [
+    {
+      files: ['**/*.test.js', '**/*.spec.js'],
+      env: {
+        'jest/globals': true
+      },
+      globals: {
+        describe: 'readonly',
+        test: 'readonly',
+        expect: 'readonly'
+      }
+    }
+  ]
 };

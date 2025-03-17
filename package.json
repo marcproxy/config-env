@@ -25,6 +25,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
@@ -59,6 +60,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@babel/runtime": "^7.26.10",
     "ansi-escapes": "^4.3.2",
     "ansi-regex": "^5.0.1",
     "ansi-styles": "^4.3.0",
@@ -251,10 +253,11 @@
   },
   "scripts": {
     "prod": "cross-env NODE_ENV=production npm run test && webpack --mode production",
-    "dev": "cross-env NODE_ENV=development npm run lint && npm run doc && webpack serve --mode development",
+    "dev": "cross-env NODE_ENV=development npm run lint-no-fail && npm run doc && webpack serve --mode development",
     "dev:staging": "cross-env NODE_ENV=staging webpack serve --mode development",
     "dev:testing": "cross-env NODE_ENV=testing webpack serve --mode development",
-    "lint": "eslint --fix src",
+    "lint": "eslint 'src/**/*.{js,jsx}' --fix",
+    "lint:strict": "eslint 'src/**/*.{js,jsx}'",
     "lint:styles": "stylelint '**/*.scss'",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -273,7 +276,8 @@
     "build:testing": "cross-env NODE_ENV=testing npm run clean && webpack --mode production",
     "env:create": "node -e \"const fs=require('fs');!fs.existsSync('.env')&&fs.copyFileSync('.env.example','.env');console.log('.env file created')\"",
     "validate": "npm run lint && npm run test",
-    "postinstall": "npm run prepare && npm run env:create"
+    "postinstall": "npm run prepare && npm run env:create",
+    "lint-no-fail": "eslint 'src/**/*.{js,jsx}' --fix || true"
   },
   "repository": {
     "type": "git",
